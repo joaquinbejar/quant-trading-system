@@ -1,0 +1,16 @@
+{
+  "pool": "0xPOOL",
+  "venue": "uniswap_v3",
+  "pair": "WETH/USDC",
+  "fee": 5,
+  "ts": "2025-01-01T10:00:00.000Z",
+  "reserves": {
+    "token0": "WETH",
+    "token1": "USDC",
+    "amount0": "1000.0000",
+    "amount1": "2445000.00"
+  },
+  "sqrtPriceX96": "79228162514264337593543950336",
+  "tick": 123456,
+  "liquidity": "1234567890"
+}

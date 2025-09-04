@@ -1,0 +1,71 @@
+[package]
+name = "quant-trading-system"
+version = "0.1.0"
+edition = "2021"
+authors = ["Joaquin Bejar <jb@taunais.com>"]
+description = "Thread-safe quantitative trading system with CLOB order book and AMM pool"
+license = "MIT"
+readme = "README.md"
+repository = ""
+homepage = ""
+keywords = ["trading", "orderbook", "amm", "quantitative", "finance"]
+categories = ["finance", "algorithms"]
+include = [
+    "benches/**/*",
+    "src/**/*",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE",
+    "examples/**/*.rs",
+    "tests/**/*.rs",
+    "Makefile",
+    "rust-toolchain.toml",
+    "Draws/**/*.png",
+    "Docker/**/*.Dockerfile",
+    "Docker/**/*.yml",
+]
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Decimal arithmetic for financial calculations
+rust_decimal = { version = "1.32", features = ["serde-with-str"] }
+rust_decimal_macros = "1.32"
+
+# Date and time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "2.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# HTTP server for metrics API
+warp = { version = "0.4", features = ["server"] }
+
+[dev-dependencies]
+criterion = { version = "0.7", features = ["html_reports"] }
+
+[[bench]]
+name = "orderbook_bench"
+harness = false
+
+[[bench]]
+name = "amm_bench"
+harness = false
+
+[[bench]]
+name = "ingestion_bench"
+harness = false
+
+[[bench]]
+name = "concurrency_bench"
+harness = false
