@@ -16,20 +16,20 @@ graph TB
     A --> C[Stream Ingester]
     A --> D[Arbitrage Monitor]
     A --> E[Metrics API Server]
-    
+
     B --> F[Order Books]
     B --> G[AMM Pools]
-    
+
     C --> H[Market Events Channel]
     H --> B
-    
+
     D --> F
     D --> G
-    
+
     E --> I[HTTP Endpoints]
-    I --> J[/metrics]
-    I --> K[/orderbooks]
-    I --> L[/pools]
+    I --> J["GET /metrics"]
+    I --> K["GET /orderbooks"]
+    I --> L["GET /pools"]
 ```
 
 ## Key Data Structures
