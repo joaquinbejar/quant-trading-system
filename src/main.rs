@@ -165,7 +165,7 @@ async fn simulate_real_time_updates(tx: mpsc::Sender<MarketEvent>) {
         }
 
         // Occasionally simulate AMM pool updates
-        if seq % 50 == 0 {
+        if seq.is_multiple_of(50) {
             let new_reserves = TokenReserves::new(
                 dec!(1000) + rust_decimal::Decimal::from(seq % 100),
                 dec!(2445000) + rust_decimal::Decimal::from(seq % 10000),

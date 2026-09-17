@@ -158,13 +158,12 @@ fn test_concurrent_order_book_updates() {
             thread::spawn(move || {
                 for j in 0..20 {
                     let seq = 1001 + (i * 20) + j;
-                    let mut updates = Vec::new();
-                    updates.push(PriceLevelUpdate::new(
+                    let updates = vec![PriceLevelUpdate::new(
                         Side::Bid,
                         Price(dec!(2399.0) + rust_decimal::Decimal::from(j)),
                         Quantity(dec!(1.0)),
                         UpdateAction::Update,
-                    ));
+                    )];
 
                     let delta = OrderBookDelta::with_updates(
                         SequenceNumber(seq as u64),

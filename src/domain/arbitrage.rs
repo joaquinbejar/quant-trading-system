@@ -266,7 +266,7 @@ impl ArbitrageDetector {
         }
 
         // Sort by profit percentage (descending)
-        opportunities.sort_by(|a, b| b.profit_percent.cmp(&a.profit_percent));
+        opportunities.sort_by_key(|a| std::cmp::Reverse(a.profit_percent));
 
         opportunities
     }
