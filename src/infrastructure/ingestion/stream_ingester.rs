@@ -78,7 +78,7 @@ impl StreamIngester {
             }
 
             // Log progress periodically
-            if event_count % 1000 == 0 {
+            if event_count.is_multiple_of(1000) {
                 info!(
                     "Processed {} events, {} errors ({}% error rate)",
                     event_count,
@@ -248,7 +248,7 @@ impl StatisticalStreamIngester {
             }
 
             // Report statistics periodically
-            if self.stats.total_events % self.report_interval == 0 {
+            if self.stats.total_events.is_multiple_of(self.report_interval) {
                 self.report_stats();
             }
         }
