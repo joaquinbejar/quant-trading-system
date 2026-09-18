@@ -1,6 +1,6 @@
 [package]
 name = "quant-trading-system"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Joaquin Bejar <jb@taunais.com>"]
 description = "Thread-safe quantitative trading system with CLOB order book and AMM pool"
