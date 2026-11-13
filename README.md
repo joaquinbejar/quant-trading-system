@@ -31,8 +31,17 @@ All data structures use `std::sync::RwLock` for concurrent access:
 - **Concurrency**: Lock-free reads, minimal write contention
 
 
-## Contact
+## Contribution and Contact
 
-**Joaquín Béjar García**
-- Email: jb@taunais.com
-- GitHub: [joaquinbejar](https://github.com/joaquinbejar)
+### **Contact Information**
+- **Author**: Joaquín Béjar García
+- **Email**: jb@taunais.com
+- **Telegram**: [@joaquin_bejar](https://t.me/joaquin_bejar)
+- **Repository**: <https://github.com/joaquinbejar/quant-trading-system>
+
+<!-- related-projects:start -->
+## Related projects
+
+No other repositories by the same author depend on this project, and it depends on none of them. See all of them at <https://github.com/joaquinbejar?tab=repositories>.
+
+<!-- related-projects:end -->
